@@ -284,3 +284,46 @@ body {
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
+
+
+/* --- AJUSTES PARA CELULAR --- */
+@media (max-width: 480px) {
+    .content-wrapper {
+        flex-direction: column; /* Coloca o vídeo embaixo do livro */
+        gap: 20px;
+        align-items: center;
+    }
+
+    .book {
+        width: 90vw; /* O livro passa a ter 90% da largura da tela */
+        height: auto; /* A altura se ajusta ao conteúdo */
+        min-height: 500px;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .video-card {
+        width: 90vw;
+    }
+
+    .video-card iframe {
+        width: 100%; /* Vídeo ocupa a largura total do card */
+        height: 180px;
+    }
+
+    .side-bookmarks {
+        right: 0; /* Traz os botões mais para dentro para não sumirem */
+        top: auto;
+        bottom: 20px;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        position: relative;
+    }
+
+    .mark {
+        border-radius: 5px;
+        width: 60px;
+    }
+}
+
