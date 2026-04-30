@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refúgio Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars-background"></div>
+
+    <div class="app-container">
+        <div class="header-msg">
+            <h2>Com carinho, <span>Henrique</span> <span class="heart">❤️</span></h2>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="book-area">
+                <div id="book-canvas" class="book">
+                    
+                    <div id="section-cover" class="book-section active">
+                        <div class="bouquet-svg">
+                            <svg viewBox="0 0 100 100" width="120">
+                                <path d="M50,90 Q55,60 50,30" stroke="#2d6a4f" stroke-width="3" fill="none"/>
+                                <path d="M50,90 Q40,60 30,40" stroke="#2d6a4f" stroke-width="2" fill="none"/>
+                                <path d="M50,90 Q65,65 75,45" stroke="#2d6a4f" stroke-width="2" fill="none"/>
+                                <circle cx="50" cy="30" r="12" fill="#ff8fa3" />
+                                <circle cx="30" cy="40" r="10" fill="#ffb7b2" />
+                                <circle cx="75" cy="45" r="10" fill="#ffdac1" />
+                            </svg>
+                        </div>
+                        <h1 class="book-title">Leia quando precisar ❤️</h1>
+                        <button class="nav-trigger" onclick="changeSection('dedication')">Abrir Livro</button>
+                    </div>
+
+                    <div id="section-dedication" class="book-section">
+                        <p class="text-content">Você já passou e superou tantas coisas e essa é só mais uma fase que irá superar igual as outras também.
+                            Sempre te admirei pela mulher esforçada e trabalhadora que você é, e o seu coração que é gigante também, mesmo quando não está bem 
+                            ainda encontra motivos para ser gentil, você é uma pessoa maravilhosa e sempre terei uma admiração muito grande por você. 
+                            Por mais que eu não esteja em condições de te dar o apoio e carinho que queria agora, quero que saiba que estou aqui para você
+                            e pode contar comigo, estarei aqui para te ouvir e te consolar sempre que precisar, não está sozinha.</p>
+                        <div class="bookmark-btn" onclick="changeSection('summary')">Ver Sumário ➔</div>
+                        <div class="cat-page">
+                            <img src="https://www.animaniacos.com/images/gifs/animales/gatos/gato0003.gif" alt="Gatinho Fofo" width="120">
+                        </div>
+                    </div>
+
+                    <div id="section-summary" class="book-section">
+                        <h3 class="summary-title">Leia me:</h3>
+                        <div class="summary-container">
+                            <ul id="summary-list">
+                                </ul>
+                        </div>
+                        <div class="bookmark-btn" onclick="changeSection('dedication')">⬅ Voltar</div>
+                    </div>
+
+                    <div id="section-content" class="book-section">
+                        <span class="page-count" id="pg-num">Pág. 01</span>
+                        <div class="frame">
+                            <img id="main-img" src="imagem1.webp" alt="Conforto">
+                        </div>
+                        <h3 id="pg-title">Título</h3>
+                        <p id="pg-text">Texto de conforto...</p>
+                        
+                        <div class="side-bookmarks">
+                            <div class="mark next" onclick="nextPg()">➔</div>
+                            <div class="mark back" onclick="prevPg()">⬅</div>
+                        </div>
+
+                        <button id="back-to-cover-btn" class="nav-trigger back-btn" style="display: none;" onclick="resetToCover()">Voltar ao Início</button>
+                        
+                        <div class="cat-page small-cat">
+                            <img src="https://www.animaniacos.com/images/gifs/animales/gatos/gato0003.gif" width="80">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-area">
+                <div class="video-card">
+                    <p>Minha música para você.</p>
+                    <iframe src="https://www.youtube.com/embed/Tq-GzYAyB4U?start=145" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

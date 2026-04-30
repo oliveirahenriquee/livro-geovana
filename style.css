@@ -1,0 +1,286 @@
+/* --- PALETA DE CORES E VARIÁVEIS --- */
+:root {
+    --paper: #fffcf9;          /* Creme suave */
+    --primary-text: #5d545a;   /* Cinza beringela */
+    --accent: #d4a373;         /* Bege dourado */
+    --love: #e5989b;           /* Rosa quartzo */
+    --mark-color: #babbd9;     /* Lavanda Serenity */
+    --dark-bg: #1e293b;        /* Fundo do céu */
+}
+
+/* --- ESTILO GERAL --- */
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
+    font-family: 'Verdana', sans-serif;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- FUNDO ESTRELADO --- */
+.stars-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.3;
+}
+
+/* --- CONTAINER PRINCIPAL --- */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header-msg h2 {
+    font-weight: normal;
+    color: #f1f5f9;
+}
+
+.header-msg span {
+    color: var(--love);
+    font-weight: bold;
+}
+
+/* --- O LIVRO --- */
+.book {
+    width: 420px;
+    height: 580px;
+    background: var(--paper);
+    border-radius: 5px 20px 20px 5px;
+    padding: 30px;
+    box-sizing: border-box;
+    color: var(--primary-text);
+    position: relative;
+    box-shadow: 25px 25px 50px rgba(0,0,0,0.6);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #f1ece1;
+}
+
+.book-section { 
+    display: none; 
+    flex-direction: column; 
+    height: 100%; 
+    text-align: center; 
+}
+
+.book-section.active { 
+    display: flex; 
+    animation: fadeIn 0.5s forwards; 
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+/* --- CAPA E DECORAÇÕES --- */
+.bouquet-svg {
+    margin-bottom: 20px;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+}
+
+.book-title {
+    font-size: 1.6rem;
+    color: var(--primary-text);
+    margin-bottom: 30px;
+}
+
+/* --- GATINHO --- */
+.cat-page {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    z-index: 5;
+    opacity: 0.8;
+}
+
+/* --- SUMÁRIO --- */
+.summary-title {
+    color: var(--love);
+    border-bottom: 2px solid var(--mark-color);
+    padding-bottom: 10px;
+}
+
+.summary-container {
+    overflow-y: auto;
+    text-align: left;
+    margin: 15px 0;
+    padding-right: 10px;
+    max-height: 350px;
+}
+
+.summary-container::-webkit-scrollbar { width: 4px; }
+.summary-container::-webkit-scrollbar-thumb { background: var(--mark-color); border-radius: 10px; }
+
+#summary-list { list-style: none; padding: 0; }
+#summary-list li {
+    padding: 10px 5px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+#summary-list li:hover { 
+    background-color: rgba(186, 187, 217, 0.1);
+    color: var(--love);
+    padding-left: 10px; 
+}
+
+/* --- PÁGINA DE CONTEÚDO E FOTOS --- */
+.page-count {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.frame { 
+    width: 100%; 
+    height: 180px; 
+    overflow: hidden; 
+    border-radius: 4px; 
+    margin-bottom: 20px; 
+    border: 6px solid white; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transform: rotate(-1deg);
+}
+
+.frame img { width: 100%; height: 100%; object-fit: cover; }
+
+#pg-title {
+    color: var(--love);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* --- ALINHAMENTO DAS LISTAS --- */
+.list-section {
+    margin: 15px auto;
+    padding: 15px;
+    background: #fdf8f5;
+    border-radius: 10px;
+    border-left: 4px solid var(--love);
+    max-width: 95%;
+    text-align: left; /* Garante que o texto da lista não fique centralizado */
+}
+
+.list-header {
+    font-weight: bold;
+    color: var(--love);
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.custom-page-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-page-list li {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #6b705c;
+    line-height: 1.3;
+}
+
+/* --- BOTÕES E MARCA-PÁGINAS --- */
+.nav-trigger { 
+    background: var(--accent); 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-trigger:hover { background: #c08d5c; transform: scale(1.05); }
+.nav-trigger:active { transform: scale(0.95); }
+
+.side-bookmarks {
+    position: absolute;
+    right: -20px;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mark {
+    background: var(--mark-color);
+    color: white;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.mark:hover { background: #9fa1c7; transform: translateX(5px); }
+
+.bookmark-btn { 
+    cursor: pointer; 
+    color: var(--mark-color); 
+    font-weight: bold; 
+    margin-top: 15px; 
+    transition: 0.3s;
+}
+
+.bookmark-btn:hover { color: var(--love); }
+
+/* --- PLAYER DE VÍDEO --- */
+.video-card { 
+    background: rgba(255,255,255,0.05); 
+    padding: 15px; 
+    border-radius: 12px; 
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+
+.video-card p { font-size: 0.8rem; margin-bottom: 10px; color: #cbd5e1; }
+
+.video-card iframe { 
+    width: 260px; 
+    height: 150px; 
+    border-radius: 8px; 
+}
+
+/* --- ANIMAÇÕES --- */
+.heart { 
+    color: var(--accent); 
+    display: inline-block;
+    animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
