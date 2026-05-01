@@ -20,7 +20,7 @@ const pages = [
         listItems: [
             "Toma um cházinho quente, como camomila ou capim-santo",
             "Toma um banho quentinho",
-            "Barulho de chuva para você ouvir",
+            "<a href='https://www.youtube.com/watch?v=AVwT7Z3EgdU' target='_blank' style='color: var(--love); text-decoration: underline;'>Ouvir barulhinho de chuva</a>",
         ]
     },
 
@@ -64,6 +64,7 @@ const pages = [
     },
     { t: "8. Quando estiver doente", 
         txt: "Se cuide, descanse bastante, se hidrate, e come direito heinnn kkkkk. espero que se sinta melhor logo bb. Se precisar de algo me avisa,", 
+        num: "08",
         listTitle: "O que fazer para se sentir melhor:",
         listItems: [
             "Se estiver com febre, toma um remédio para baixar a febre e se hidrate bastante",
